@@ -1,0 +1,78 @@
+#about {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 15px;
+    gap: 10px;
+}
+
+#about::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    left: 0;
+    bottom: 0;
+    animation: gradient-bg 5s ease-in-out infinite;
+    background: linear-gradient(90deg, rgb(109, 117, 221), rgb(238, 79, 211), rgb(109, 117, 221));
+    background-size: 300% 200%;
+}
+
+#about.landscape {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#about.portrait {
+    flex-direction: column;
+}
+
+.mint-button {
+    text-align: center;
+    padding: 15px;
+}
+
+#description {
+    color: #E9E9E9;
+}
+
+#description h2 {
+    font-size: 48px;
+}
+
+#description p {
+    font-size: 24px;
+}
+
+#description h2 span {
+    font-size: 48px;
+    background: linear-gradient(90deg, rgb(109, 117, 221), rgb(238, 79, 211), rgb(109, 117, 221));
+    background-size: 300% 200%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: gradient-bg 5s ease-in-out infinite;
+}
+
+@keyframes gradient-bg {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 150% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    #about {
+        flex-direction: row !important;
+        justify-content: space-between;
+    }
+}
