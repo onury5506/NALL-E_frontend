@@ -1,0 +1,26 @@
+.circle {
+    position: absolute;
+    z-index: -1;
+    left: var(--start-x);
+    top: var(--start-y);
+    background: radial-gradient(closest-side, var(--color), rgba(0,0,0,0));
+    animation: move 8s ease-in-out infinite;
+    opacity: 0.5;
+}
+
+@keyframes move {
+    0% {
+        left: var(--start-x);
+        top: var(--start-y);
+    }
+
+    50% {
+        left: var(--end-x);
+        top: var(--end-y);
+    }
+
+    100% {
+        left: var(--start-x);
+        top: var(--start-y);
+    }
+}
