@@ -1,0 +1,27 @@
+.button {
+    position: relative;
+    font-family: 'EB Garamond', serif;
+    font-size: 18px;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    color: #E9E9E9;
+    border-radius: 10px;
+    background: rgb(103, 101, 149);
+    background: linear-gradient(90deg, rgb(109, 117, 221) 0%, rgb(238, 79, 211) 70%);
+    background-size: 200% 100%;
+    animation: gradient-bg 6s ease infinite;
+    cursor: pointer;
+}
+
+@keyframes gradient-bg {
+	0% {
+		background-position-x: 0%;
+	}
+	50% {
+		background-position-x: 100%;
+	}
+	100% {
+		background-position-x: 0%;
+	}
+}
