@@ -15,7 +15,9 @@ export default function Navbar() {
                         <h1>NALL-E</h1>
                     </Link>
                 </div>
-                <Button>Get In Touch</Button>
+                <Link href="/contact">
+                    <Button>Get In Touch</Button>
+                </Link>
             </Container>
         </nav>
     )

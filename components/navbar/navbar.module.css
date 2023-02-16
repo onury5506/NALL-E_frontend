@@ -1,9 +1,11 @@
 #navbar{
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     background-color:rgba(57, 58, 90,0.4);
     backdrop-filter: blur(5px);
     padding: 15px 30px;
+    height: 75px;
     position: sticky;
     top: 0;
     z-index: 999;
