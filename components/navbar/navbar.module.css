@@ -1,0 +1,27 @@
+#navbar{
+    display: flex;
+    justify-content: center;
+    background-color:rgba(57, 58, 90,0.4);
+    backdrop-filter: blur(5px);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+#navbar-content{
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+#navbar-content h1{
+    font-size: 34px;
+    margin: 0;
+    text-align: center;
+    color: #E9E9E9;
+    display: inline-block;
+    user-select: none;
+}
