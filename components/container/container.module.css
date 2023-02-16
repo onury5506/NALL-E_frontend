@@ -1,0 +1,23 @@
+.container{
+    width: 100%;
+}
+
+.container[data-size="sm"]{
+    max-width: 768px;
+}
+
+.container[data-size="md"]{
+    max-width: 992px;
+}
+
+.container[data-size="lg"]{
+    max-width: 1200px;
+}
+
+.container[data-size="xl"]{
+    max-width: 1400px;
+}
+
+.container[data-size="full"]{
+    max-width: 100%;
+}
