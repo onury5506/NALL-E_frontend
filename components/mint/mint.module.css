@@ -1,0 +1,93 @@
+#mint {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 15px;
+    gap: 10px;
+    width: 100%;
+}
+
+.mint-button {
+    text-align: center;
+    padding: 15px;
+}
+
+#mint-form {
+    color: #E9E9E9;
+}
+
+#mint-form.full{
+    width: 100%;
+    text-align: center;
+}
+
+#mint-form h2 {
+    font-size: 48px;
+    text-align: center;
+}
+
+#mint-form p {
+    font-size: 24px;
+}
+
+#mint-form label{
+    display: block;
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+#mint-form input{
+    width: 100%;
+    padding: 5px;
+}
+
+#mint-form textarea{
+    width: 100%;
+    height: 300px;
+    resize: none;
+    padding: 5px;
+}
+
+#mint-form h2 span {
+    font-size: 48px;
+    background: linear-gradient(90deg, rgb(109, 117, 221), rgb(238, 79, 211), rgb(109, 117, 221));
+    background-size: 300% 200%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: gradient-bg 5s ease-in-out infinite;
+}
+
+.Error{
+    display: block;
+    color: red;
+    font-size: 16px;
+    padding-bottom: 5px;
+}
+
+@media only screen and (max-width: 800px) {
+    #mint{
+        justify-content: center;
+    }
+    .nft{
+        display: none;
+        width: 0;
+    }
+}
+
+@keyframes gradient-bg {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 150% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
