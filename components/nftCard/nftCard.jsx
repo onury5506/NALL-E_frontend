@@ -55,6 +55,7 @@ export default function NftCard(props) {
                         fill="true"
                         onLoadingComplete={() => setImgLoaded(true)}
                         draggable={false}
+                        style={{visibility: imgLoaded ? "visible" : "hidden"}}
                         priority />
                     }
                 </div>

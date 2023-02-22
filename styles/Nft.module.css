@@ -1,0 +1,119 @@
+#background-circles {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#nft-container {
+    display: flex;
+    box-sizing: border-box;
+    padding: 20px 0px;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+#img {
+    position: relative;
+    display: inline-block;
+    width: 80%;
+    aspect-ratio: 1 / 1;
+    border-radius: 5px;
+    overflow: hidden;
+    user-select: none;
+}
+
+#img-frame {
+    --angle: 90deg;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 35vw;
+    aspect-ratio: 1 / 1;
+    border: 5px solid;
+    border-image: linear-gradient(var(--angle), rgb(109, 117, 221), rgb(238, 79, 211), rgb(109, 117, 221)) 1;
+    animation: 6s gradient-bg ease-in-out infinite;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#content-frame {
+    display: inline-flex;
+    box-sizing: border-box;
+    width: calc(65vw - clamp(50px, 10vw, 150px));
+    min-height: calc(100vh - 115px);
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 5px solid;
+    border-image: linear-gradient(var(--angle), rgb(109, 117, 221), rgb(238, 79, 211), rgb(109, 117, 221)) 1;
+    animation: 6s gradient-bg ease-in-out infinite;
+}
+
+#content {
+    padding: 10px 25px;
+    color: #E9E9E9;
+    font-size: 24px;
+    width: 100%;
+}
+
+#content p {
+    font-weight: 600;
+}
+
+#content a {
+    text-decoration: none;
+    color: rgb(32, 129, 226);
+}
+
+#content h2 {
+    width: 100%;
+}
+
+#content h2::after {
+    display: block;
+    content: "";
+    width: calc(100% + 20px);
+    height: 1px;
+    position: relative;
+    top: 15px;
+    left: -10px;
+    background-color: #E9E9E9;
+}
+
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes gradient-bg {
+
+    0% {
+        --angle: 0deg;
+    }
+
+    50% {
+        --angle: 360deg;
+    }
+
+    100% {
+        --angle: 0deg;
+    }
+}
+
+#nft-container.portrait {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px
+}
+
+#nft-container.portrait #img-frame {
+    width: 90%;
+}
+
+#nft-container.portrait #content-frame {
+    width: 90%;
+}
