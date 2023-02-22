@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react'
 
 import styles from './nftCard.module.css'
 import Circle from '../circle/circle'
+import Link from 'next/link'
 
 export default function NftCard(props) {
 
@@ -12,8 +13,8 @@ export default function NftCard(props) {
 
     let prompt = promptorginal
 
-    if (prompt && prompt.length > 147) {
-        prompt = prompt.slice(0, 147) + "..."
+    if (prompt && prompt.length > 117) {
+        prompt = prompt.slice(0, 120) + "..."
     }
 
     return (
@@ -22,44 +23,46 @@ export default function NftCard(props) {
                 #{id}
             </div>
 
-            <div className={styles["nft-card__frame"]}>
-                <div className={styles["nft-card__image"]}>
-                    {
-                        !imgLoaded && <div>
-                            <Circle className={styles["loading-circle"]}
-                                unit='%'
-                                startx={0} endx={60}
-                                starty={0} endy={60}
-                                size={20}
-                                color="red"
-                            />
-                            <Circle className={styles["loading-circle"]}
-                                unit='%'
-                                startx={60} endx={0}
-                                starty={60} endy={0}
-                                size={10}
-                                color="blue"
-                            />
-                            <Circle className={styles["loading-circle"]}
-                                unit='%'
-                                startx={60} endx={0}
-                                starty={0} endy={60}
-                                size={15}
-                                color="green"
-                            />
-                        </div>
-                    }
-                    {minted && <Image
-                        alt={prompt}
-                        src={`https://nalle.s3.eu-west-3.amazonaws.com/${id}.png`}
-                        fill="true"
-                        onLoadingComplete={() => setImgLoaded(true)}
-                        draggable={false}
-                        style={{visibility: imgLoaded ? "visible" : "hidden"}}
-                        priority />
-                    }
+            <Link href={`/nft/${id}`} className={styles["nft-a"]}>
+                <div className={styles["nft-card__frame"]}>
+                    <div className={styles["nft-card__image"]}>
+                        {
+                            !imgLoaded && <div>
+                                <Circle className={styles["loading-circle"]}
+                                    unit='%'
+                                    startx={0} endx={60}
+                                    starty={0} endy={60}
+                                    size={20}
+                                    color="red"
+                                />
+                                <Circle className={styles["loading-circle"]}
+                                    unit='%'
+                                    startx={60} endx={0}
+                                    starty={60} endy={0}
+                                    size={10}
+                                    color="blue"
+                                />
+                                <Circle className={styles["loading-circle"]}
+                                    unit='%'
+                                    startx={60} endx={0}
+                                    starty={0} endy={60}
+                                    size={15}
+                                    color="green"
+                                />
+                            </div>
+                        }
+                        {minted && <Image
+                            alt={prompt}
+                            src={`https://nalle.s3.eu-west-3.amazonaws.com/${id}.png`}
+                            fill="true"
+                            onLoadingComplete={() => setImgLoaded(true)}
+                            draggable={false}
+                            style={{ visibility: imgLoaded ? "visible" : "hidden" }}
+                            priority />
+                        }
+                    </div>
                 </div>
-            </div>
+            </Link>
 
             <div className={styles["nft-card__prompt"]}>
                 {prompt}

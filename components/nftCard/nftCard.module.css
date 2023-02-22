@@ -38,7 +38,7 @@
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    width: 90%;
+    width: 100%;
     box-sizing: border-box;
 }
 
@@ -67,4 +67,9 @@
     min-height: 200px;
     word-wrap: break-word;
     text-align: center;
+}
+
+.nft-a{
+    display: block;
+    width: 90%;
 }
