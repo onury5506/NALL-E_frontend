@@ -68,7 +68,7 @@ export default function Form({ setMintedId }) {
         }).then(({ data }) => {
             setMintedId(data.nft_mint)
         }).catch(err => {
-            buf.server = "Oops something went wrong, try again!"
+            buf.server = err.message ? err.message : "Oops something went wrong, try again!"
             setFormError(buf)
         }).finally(() => {
             setLoading(false)
